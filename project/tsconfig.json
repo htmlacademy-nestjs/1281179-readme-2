@@ -19,9 +19,6 @@
       "path": "./apps/notify"
     },
     {
-      "path": "./libs/shared/core"
-    },
-    {
       "path": "./libs/shared/types"
     }
   ]
