@@ -1,5 +1,5 @@
 {
-  "name": "@project/account",
+  "name": "@readme/account",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -63,15 +63,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@project/account:build",
+          "buildTarget": "@readme/account:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@project/account:build:development"
+            "buildTarget": "@readme/account:build:development"
           },
           "production": {
-            "buildTarget": "@project/account:build:production"
+            "buildTarget": "@readme/account:build:production"
           }
         }
       }
