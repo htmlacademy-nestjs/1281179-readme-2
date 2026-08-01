@@ -22,7 +22,7 @@
       "path": "./libs/shared/types"
     },
     {
-      "path": "./libs/shared/helpers"
+      "path": "./libs/shared/data-access"
     }
   ]
 }

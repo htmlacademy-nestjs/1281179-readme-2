@@ -1,7 +1,7 @@
-# helpers
+# data-access
 
 This library was generated with [Nx](https://nx.dev).
 
 ## Building
 
-Run `nx build helpers` to build the library.
+Run `nx build data-access` to build the library.
