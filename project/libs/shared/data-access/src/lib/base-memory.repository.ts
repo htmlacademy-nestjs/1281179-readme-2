@@ -7,7 +7,7 @@ import { EntityNoIdError } from "./entity-no-id.error.js";
 
 export abstract class BaseMemoryRepository<T extends Entity<EntityIdType>> implements Repository<T> {
 
-  private entities: Map<NonNullable<T['id']>, T> = new Map();
+  protected entities: Map<NonNullable<T['id']>, T> = new Map();
 
   public async findById(id: NonNullable<T["id"]>): Promise<T | null> {
     return this.entities.get(id) ?? null;
