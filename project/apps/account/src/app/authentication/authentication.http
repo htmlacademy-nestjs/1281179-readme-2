@@ -1,0 +1,78 @@
+@baseUrl = http://localhost:3000/api/auth
+
+### Регистрация нового пользователя → 201 + пользователь без passwordHash
+# @name signup
+POST {{baseUrl}}/signup
+Content-Type: application/json
+
+{
+  "email": "nastya@mail.ru",
+  "password": "secret1",
+  "fullName": "Настя Кудрявцева"
+}
+
+### Регистрация с аватаром → 201, avatarId в ответе
+POST {{baseUrl}}/signup
+Content-Type: application/json
+
+{
+  "email": "anton@mail.ru",
+  "password": "secret1",
+  "fullName": "Антон Глуханько",
+  "avatarId": "b0d813a2-3f5e-4bcd-9a1a-0e0e0e0e0e0e"
+}
+
+### Повторная регистрация на занятый email → 409 Conflict
+POST {{baseUrl}}/signup
+Content-Type: application/json
+
+{
+  "email": "nastya@mail.ru",
+  "password": "secret1",
+  "fullName": "Настя Кудрявцева"
+}
+
+### Невалидные данные → 400 с разбором по полям
+POST {{baseUrl}}/signup
+Content-Type: application/json
+
+{
+  "email": "not-an-email",
+  "password": "123",
+  "fullName": "Аб"
+}
+
+### Вход с верным паролем → 200 + { id, email }
+# @name login
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "nastya@mail.ru",
+  "password": "secret1"
+}
+
+### Вход с неверным паролем → 401, ответ неотличим от «нет такого email»
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "nastya@mail.ru",
+  "password": "wrong99"
+}
+
+### Вход с несуществующим email → 401, тот же ответ
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "nobody@mail.ru",
+  "password": "secret1"
+}
+
+### Детальная информация о пользователе → 200 + профиль без passwordHash
+# id подставляется из ответа на запрос "signup" (выполни его первым)
+GET {{baseUrl}}/{{signup.response.body.id}}
+
+### Запрос несуществующего пользователя → 404 Not Found
+GET {{baseUrl}}/00000000-0000-0000-0000-000000000000
