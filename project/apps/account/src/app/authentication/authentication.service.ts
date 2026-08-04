@@ -5,7 +5,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { ReadmeUserRepository } from '../readme-user/readme-user.repository';
-import { UserDto } from './dto/user.dto';
+import { CreateUserDto } from './dto/create-user.dto';
 import { ReadmeUserEntity } from '../readme-user/readme-user.entity';
 import { LoginUserDto } from './dto/login-user.dto';
 
@@ -13,7 +13,7 @@ import { LoginUserDto } from './dto/login-user.dto';
 export class AuthenticationService {
   constructor(private readonly readmeUserRepository: ReadmeUserRepository) {}
 
-  public async register(userDto: UserDto): Promise<ReadmeUserEntity> {
+  public async register(userDto: CreateUserDto): Promise<ReadmeUserEntity> {
     const existingUser = await this.readmeUserRepository.findByEmail(
       userDto.email,
     );

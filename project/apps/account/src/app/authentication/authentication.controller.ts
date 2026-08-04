@@ -11,7 +11,7 @@ import { AuthenticationService } from './authentication.service';
 import { ZodResponse } from 'nestjs-zod';
 import { LoginUserRdo } from './dto/login-user.rdo';
 import { LoginUserDto } from './dto/login-user.dto';
-import { UserDto } from './dto/user.dto';
+import { CreateUserDto } from './dto/create-user.dto';
 import { UserRdo } from './dto/user.rdo';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
@@ -53,7 +53,7 @@ export class AuthenticationController {
     description: 'Authenticated user has no id',
   })
   @ZodResponse({ type: UserRdo })
-  public async signup(@Body() createUserDto: UserDto) {
+  public async signup(@Body() createUserDto: CreateUserDto) {
     const { id, ...rest } = (
       await this.authService.register(createUserDto)
     ).toPlainObject();
