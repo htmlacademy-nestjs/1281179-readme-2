@@ -1,5 +1,5 @@
 {
-  "name": "@project/blog",
+  "name": "@readme/blog",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -63,15 +63,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@project/blog:build",
+          "buildTarget": "@readme/blog:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@project/blog:build:development"
+            "buildTarget": "@readme/blog:build:development"
           },
           "production": {
-            "buildTarget": "@project/blog:build:production"
+            "buildTarget": "@readme/blog:build:production"
           }
         }
       }

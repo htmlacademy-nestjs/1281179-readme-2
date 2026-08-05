@@ -1,5 +1,5 @@
 {
-  "name": "@project/notify",
+  "name": "@readme/notify",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -63,15 +63,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@project/notify:build",
+          "buildTarget": "@readme/notify:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@project/notify:build:development"
+            "buildTarget": "@readme/notify:build:development"
           },
           "production": {
-            "buildTarget": "@project/notify:build:production"
+            "buildTarget": "@readme/notify:build:production"
           }
         }
       }

@@ -1,5 +1,5 @@
 {
-  "name": "@project/files",
+  "name": "@readme/files",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -63,15 +63,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@project/files:build",
+          "buildTarget": "@readme/files:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@project/files:build:development"
+            "buildTarget": "@readme/files:build:development"
           },
           "production": {
-            "buildTarget": "@project/files:build:production"
+            "buildTarget": "@readme/files:build:production"
           }
         }
       }

@@ -1,5 +1,5 @@
 {
-  "name": "@project/source",
+  "name": "@readme/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {},
@@ -9,11 +9,13 @@
     "@nestjs/core": "^11.0.0",
     "@nestjs/platform-express": "^11.0.0",
     "axios": "^1.6.0",
+    "nestjs-zod": "^5.5.0",
     "next": "~16.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -52,7 +54,6 @@
   },
   "workspaces": [
     "apps/*",
-    "blog",
-    "blog-e2e"
+    "libs/shared/*"
   ]
 }
